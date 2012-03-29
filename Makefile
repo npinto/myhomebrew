@@ -14,6 +14,11 @@ all:
 sed:
 	brew install gnu-sed --default-names
 
+htop:
+	brew tap adamv/alt || exit 0
+	brew install --HEAD htop || exit 0
+	cd /usr/local/Cellar/htop/HEAD/bin && sudo chmod 6555 htop && sudo chown root htop
+
 python:
 	brew install readline sqlite gdbm
 	brew install --framework --universal python
